@@ -6,7 +6,7 @@
 <!-- Meta -->
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="Александр Куликов" />
-<meta name="description" content="Лабораторная работа №1" />
+<meta name="description" content="Лабораторная работа №2" />
 <!--Force latest IE rendering engine (& Chrome Frame if is installed)-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -15,33 +15,36 @@
 
 <?php
 
-  if (!empty($_GET['color'])) $color = $_GET['color'];
-  else $color = 'B4D000';
-  
-  echo ('<span style="color:#'.$color.'; font-weight:bold;" >');
-  echo ('Куликов'); echo ('<br/>');
-  echo ('Александр'); echo ('<br/>');
-  echo ('Юрьевич'); echo ('<br/>');
-  echo ('</span>');
-  
-  $result = (2+2*2)/2 + 4.7;
-  var_dump($result); echo ('<br/>');
-  
-  $test_arr = array (
-                      'циркулярная юла',
-                      'антиадминский щиток',
-                      'шлем искренних мыслей',
-                      'пояс суеверности',
-                      'рукавицы невоздержанности',
-                      'готоваленки',
-                      'значок «Я - герой!»'
-                    );
-  
-  $rand = rand ( 0 , 6 );
-  
-  echo ($test_arr[$rand]); echo ('<br/>');
+  $users_array = array(
+                        'Александр',
+                        'Дмитрий',
+                        'Алексей',
+                        'Юрий',
+                        'Владимир',
+                      );
+  $is_user_registered = false;
 
-?>
+  if (!empty($_POST['user']))
+  {
+    $user_name = $_POST['user'];
+    if (in_array($user_name, $users_array)) $is_user_registered = true;
+  }
+  
+  if ($is_user_registered)
+  {
+  }
+  else
+  { ?>
+    <form action="" method="POST">
+    <?php if(!$is_user_registered) { ?>
+      <span style="color:red; font-weight:bold;">Пользователь не найден</span>
+    <?php } ?>
+    <input type="edit" value="" name="user"/>
+    <input type="submit" value="Регистрация" />
+    </form>
+    
+  <?php } ?>
+  
 
 </body>
 </html>
