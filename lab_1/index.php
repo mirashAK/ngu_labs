@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
 <title>Лабораторная работа №1</title>
@@ -15,18 +16,22 @@
 
 <?php
 
+	// Установка цвета надписи через передаваемый параметр 
   if (!empty($_GET['color'])) $color = $_GET['color'];
   else $color = 'B4D000';
   
+  // Вывод ФИО с указанием цвета шрифта
   echo ('<span style="color:#'.$color.'; font-weight:bold;" >');
   echo ('Куликов'); echo ('<br/>');
   echo ('Александр'); echo ('<br/>');
   echo ('Юрьевич'); echo ('<br/>');
-  echo ('</span>');
+  echo ('</span>'); echo ('<br/>');
   
+  // Выполнение арифметической операции
   $result = (2+2*2)/2 + 4.7;
-  var_dump($result); echo ('<br/>');
+  var_dump($result); echo ('<br/>'); echo ('<br/>');
   
+  // Массив со значениями, выбираемыми случайно
   $test_arr = array (
                       'циркулярная юла',
                       'антиадминский щиток',
@@ -37,8 +42,10 @@
                       'значок «Я - герой!»'
                     );
   
+  // Генерация случайного числа
   $rand = rand ( 0 , 6 );
   
+  // Вывод случайного элемента массива
   echo ($test_arr[$rand]); echo ('<br/>');
 
 ?>

@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 </head>
-<body>
+<body bgcolor="white">
 
 <table border=1>
 
